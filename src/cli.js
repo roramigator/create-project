@@ -8,6 +8,8 @@ function parseArguments(rawArgs){
 			'--git': Boolean,
 			'--yes': Boolean,
 			'--install': Boolean,
+			'--help': Boolean,
+			'-h': '--help',
 			'-g': '--git',
 			'-y': '--yes',
 			'-i': '--install'
@@ -20,7 +22,9 @@ function parseArguments(rawArgs){
 		skipPrompts: args['--yes'] || false,
 		git: args['--git'] || false,
 		template: args._[0],
-		runInstall: args['--install'] || false
+		targetDir: args._[1],
+		runInstall: args['--install'] || false,
+		help: args['--help'] || false
 	}
 }
 
@@ -64,6 +68,10 @@ async function missingOpts(opts) {
 
 export async function cli(args){
 	let opts = parseArguments(args);
+	if(opts.help){
+		console.log('Usage: create-project TEMPLATE DIRECTORY [OPTION]...\nExample: create-project javascript -y\n\nOptions:\n-i, --install\tInstall dependencies\n-g, --git\tInitialize repository\n-y, --yes\tSet defaults');
+		return;
+	}
 	opts = await missingOpts(opts);
 	await createProject(opts);
 }
