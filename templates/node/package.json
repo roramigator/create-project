@@ -1,0 +1,16 @@
+
+{
+ "name": "server-template",
+ "main": "src/index.js",
+ "scripts": {
+   "start": "node index.js"
+ },
+ "keywords": [],
+ "author": "@roramigator",
+ "licence": "MIT",
+ "dependencies": {
+   "cors": "^2.8.5",
+   "express": "^4.17.1",
+   "request": "^2.88.2"
+ }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "javascript-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "@roramigator",
+  "licence": "MIT",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
