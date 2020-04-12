@@ -29,7 +29,7 @@ function parseArguments(rawArgs){
 }
 
 async function missingOpts(opts) {
-	const defaultTemplate = 'New';
+	const defaultTemplate = 'Node';
 	if (opts.skipPrompts) {
 		return {
 			...opts,
@@ -43,7 +43,7 @@ async function missingOpts(opts) {
 			type: 'list',
 			name: 'template',
 			message: 'Choose the template for your project',
-			choices: ['JavaScript', 'React', 'Node', 'TypeScript'],
+			choices: ['JavaScript', 'React', 'Express', 'TypeScript'],
 			default: defaultTemplate
 		});
 	}
